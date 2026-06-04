@@ -12,6 +12,9 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  const isHome = pathname === '/';
+  const isDarkText = isScrolled || !isHome;
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -31,7 +34,7 @@ export default function Navbar() {
           <div className="flex items-center md:hidden">
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 -ml-2 transition-colors ${isScrolled ? 'text-gray-900' : 'text-white'}`}
+              className={`p-2 -ml-2 transition-colors ${isDarkText ? 'text-gray-900' : 'text-white'}`}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -39,7 +42,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center justify-center md:justify-start flex-1 md:flex-none">
-            <Link href="/" className={`font-serif text-2xl tracking-wide transition-colors ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
+            <Link href="/" className={`font-serif text-2xl tracking-wide transition-colors ${isDarkText ? 'text-gray-900' : 'text-white'}`}>
               L&apos;Artisan
             </Link>
           </div>
@@ -48,28 +51,28 @@ export default function Navbar() {
           <div className="hidden md:flex items-center justify-center flex-1 space-x-12">
             <Link 
               href="/" 
-              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isScrolled ? 'text-gray-600 hover:text-amber-700' : 'text-gray-200 hover:text-white'}`}
+              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isDarkText ? 'text-gray-600 hover:text-amber-700' : 'text-gray-200 hover:text-white'}`}
             >
               Home
               <span className={`absolute -bottom-2 left-0 w-full h-[1px] bg-amber-500 scale-x-0 transition-transform group-hover:scale-x-100 ${isActive('/') ? 'scale-x-100' : ''}`}></span>
             </Link>
             <Link 
               href="/menu" 
-              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isScrolled ? 'text-gray-600 hover:text-amber-700' : 'text-gray-200 hover:text-white'}`}
+              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isDarkText ? 'text-gray-600 hover:text-amber-700' : 'text-gray-200 hover:text-white'}`}
             >
               Our Menu
               <span className={`absolute -bottom-2 left-0 w-full h-[1px] bg-amber-500 scale-x-0 transition-transform group-hover:scale-x-100 ${isActive('/menu') ? 'scale-x-100' : ''}`}></span>
             </Link>
             <Link 
               href="/custom-orders" 
-              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isScrolled ? 'text-gray-600 hover:text-amber-700' : 'text-gray-200 hover:text-white'}`}
+              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isDarkText ? 'text-gray-600 hover:text-amber-700' : 'text-gray-200 hover:text-white'}`}
             >
               Custom Orders
               <span className={`absolute -bottom-2 left-0 w-full h-[1px] bg-amber-500 scale-x-0 transition-transform group-hover:scale-x-100 ${isActive('/custom-orders') ? 'scale-x-100' : ''}`}></span>
             </Link>
             <Link 
               href="/contact" 
-              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isScrolled ? 'text-gray-600 hover:text-amber-700' : 'text-gray-200 hover:text-white'}`}
+              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isDarkText ? 'text-gray-600 hover:text-amber-700' : 'text-gray-200 hover:text-white'}`}
             >
               Contact
               <span className={`absolute -bottom-2 left-0 w-full h-[1px] bg-amber-500 scale-x-0 transition-transform group-hover:scale-x-100 ${isActive('/contact') ? 'scale-x-100' : ''}`}></span>
@@ -80,14 +83,14 @@ export default function Navbar() {
           <div className="flex items-center gap-4 md:gap-6">
             <Link 
               href="/menu"
-              className={`transition-colors ${isScrolled ? 'text-gray-900 hover:text-amber-700' : 'text-white hover:text-amber-200'}`}
+              className={`transition-colors ${isDarkText ? 'text-gray-900 hover:text-amber-700' : 'text-white hover:text-amber-200'}`}
               aria-label="Search Menu"
             >
               <Search className="w-5 h-5" />
             </Link>
             <button 
               onClick={() => setIsOpen(true)}
-              className={`relative flex items-center transition-colors group ${isScrolled ? 'text-gray-900 hover:text-amber-700' : 'text-white hover:text-amber-200'}`}
+              className={`relative flex items-center transition-colors group ${isDarkText ? 'text-gray-900 hover:text-amber-700' : 'text-white hover:text-amber-200'}`}
             >
               <ShoppingBag className="w-5 h-5 transition-transform group-hover:scale-110" />
               {getTotalItems() > 0 && (
