@@ -64,7 +64,7 @@ export default async function Home() {
                   Repair & Restore <br/> Hair Mask
                 </h2>
                 <p className="text-emerald-100/80 text-lg mb-8 font-light leading-relaxed">
-                  Infused with the pure goodness of coconut, amla, hibiscus, and aloe vera. Our Repair & Restore Hair Mask penetrates deep into the roots to nourish, strengthen, and bring back your hair's natural shine. Free from harsh chemicals, sulfates, and parabens.
+                  Infused with the pure goodness of coconut, amla, hibiscus, and aloe vera. Our Repair & Restore Hair Mask penetrates deep into the roots to nourish, strengthen, and bring back your hair&apos;s natural shine. Free from harsh chemicals, sulfates, and parabens.
                 </p>
                 <Link href="/shop" className="inline-block border-b border-emerald-300 text-emerald-300 pb-1 font-medium tracking-wide hover:text-white hover:border-white transition-colors">
                   Shop Now
@@ -86,7 +86,7 @@ export default async function Home() {
         <section className="py-24 bg-[#F2F5F3]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700 mb-3">Our Promise</h2>
-            <h3 className="text-4xl font-serif text-gray-900 mb-16">Nature's Goodness</h3>
+            <h3 className="text-4xl font-serif text-gray-900 mb-16">Nature&apos;s Goodness</h3>
             
             <div className="grid md:grid-cols-3 gap-12">
               <div className="p-8 bg-white rounded-xl shadow-sm border border-emerald-50">

@@ -43,7 +43,7 @@ export default function AboutPage() {
                 <Leaf className="w-10 h-10 text-emerald-600" />
               </div>
               <h3 className="text-xl font-serif text-gray-900 mb-4">Purity First</h3>
-              <p className="text-gray-500 font-light">We use only cold-pressed oils and pure botanical extracts. If we wouldn't put it on our own skin, we don't put it in our products.</p>
+              <p className="text-gray-500 font-light">We use only cold-pressed oils and pure botanical extracts. If we wouldn&apos;t put it on our own skin, we don&apos;t put it in our products.</p>
             </div>
             <div className="text-center">
               <div className="w-20 h-20 mx-auto bg-emerald-50 rounded-full flex items-center justify-center mb-6">
@@ -57,7 +57,7 @@ export default function AboutPage() {
                 <Droplets className="w-10 h-10 text-emerald-600" />
               </div>
               <h3 className="text-xl font-serif text-gray-900 mb-4">Effective Results</h3>
-              <p className="text-gray-500 font-light">Nature isn't just gentle; it's powerful. Our formulas are rigorously tested to ensure they deliver visible, long-lasting results for your hair.</p>
+              <p className="text-gray-500 font-light">Nature isn&apos;t just gentle; it&apos;s powerful. Our formulas are rigorously tested to ensure they deliver visible, long-lasting results for your hair.</p>
             </div>
           </div>
         </section>
