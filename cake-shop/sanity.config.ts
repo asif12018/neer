@@ -5,7 +5,7 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'cake-shop',
+  title: 'Neer Natural Care',
 
   projectId: 'f3xjmlbv',
   dataset: 'production',

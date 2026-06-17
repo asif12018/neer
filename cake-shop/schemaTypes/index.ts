@@ -1,3 +1,3 @@
-import { cake } from './cake'
+import { product } from './product'
 
-export const schemaTypes = [cake]
+export const schemaTypes = [product]

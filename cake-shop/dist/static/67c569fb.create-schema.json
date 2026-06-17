@@ -1,0 +1,141 @@
+[
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "name",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 0
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "price",
+        "type": "number",
+        "title": "Price (৳)"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Hair Oil",
+              "value": "Hair Oil"
+            },
+            {
+              "title": "Hair Mask",
+              "value": "Hair Mask"
+            },
+            {
+              "title": "Combo",
+              "value": "Combo"
+            },
+            {
+              "title": "New Arrival",
+              "value": "New Arrival"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "Hair Oil",
+                  "Hair Mask",
+                  "Combo",
+                  "New Arrival"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "description": "E.g., 100ml, 150ml, 200ml, 200g",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "sizeOptions",
+        "type": "array"
+      }
+    ],
+    "name": "product",
+    "type": "document"
+  }
+]
