@@ -10,7 +10,7 @@ export default function AboutPage() {
       <Cart />
       
       <main className="pt-32 pb-24">
-        {/* Header dfdfdf*/}
+        {/* Header */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20">
           <h1 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6">Our Story</h1>
           <p className="text-lg text-gray-500 font-light leading-relaxed">
