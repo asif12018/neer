@@ -2,31 +2,22 @@ import Navbar from '@/components/Navbar';
 
 export const revalidate = 10; // Revalidate every 10 seconds
 import Cart from '@/components/Cart';
-import { getCakeById } from '@/sanity/client';
+import { getProductById } from '@/sanity/client';
 import ProductClient from './ProductClient';
-import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
-export default async function ProductDetails({ params }: { params: { id: string } }) {
-  // Await the params object in Next.js 15+ compatible way
-  const resolvedParams = await params;
-  const product = await getCakeById(resolvedParams.id);
+export default async function ProductPage({ params }: { params: { id: string } }) {
+  const product = await getProductById(params.id);
 
   if (!product) {
-    return (
-      <div className="min-h-screen bg-[#FAFAFA] flex flex-col items-center justify-center font-sans">
-        <h1 className="text-3xl font-serif mb-4">Product Not Found</h1>
-        <Link href="/" className="text-amber-700 underline">
-          Return Home
-        </Link>
-      </div>
-    );
+    notFound();
   }
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] font-sans text-gray-900 selection:bg-amber-100 selection:text-amber-900">
+    <div className="min-h-screen bg-[#FAFAFA] font-sans">
       <Navbar />
       <Cart />
-
+      
       <main className="pt-32 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ProductClient product={product} />
       </main>

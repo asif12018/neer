@@ -42,8 +42,8 @@ export default function Navbar() {
 
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center justify-center md:justify-start flex-1 md:flex-none">
-            <Link href="/" className={`font-serif text-2xl tracking-wide transition-colors ${isDarkText ? 'text-gray-900' : 'text-white'}`}>
-              L&apos;Artisan
+            <Link href="/" className={`font-serif text-3xl tracking-wider transition-colors ${isDarkText ? 'text-emerald-900' : 'text-white'}`}>
+              Neer
             </Link>
           </div>
 
@@ -51,50 +51,50 @@ export default function Navbar() {
           <div className="hidden md:flex items-center justify-center flex-1 space-x-12">
             <Link 
               href="/" 
-              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isDarkText ? 'text-gray-600 hover:text-amber-700' : 'text-gray-200 hover:text-white'}`}
+              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isDarkText ? 'text-gray-600 hover:text-emerald-700' : 'text-gray-200 hover:text-white'}`}
             >
               Home
-              <span className={`absolute -bottom-2 left-0 w-full h-[1px] bg-amber-500 scale-x-0 transition-transform group-hover:scale-x-100 ${isActive('/') ? 'scale-x-100' : ''}`}></span>
+              <span className={`absolute -bottom-2 left-0 w-full h-[1px] bg-emerald-500 scale-x-0 transition-transform group-hover:scale-x-100 ${isActive('/') ? 'scale-x-100' : ''}`}></span>
             </Link>
             <Link 
-              href="/menu" 
-              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isDarkText ? 'text-gray-600 hover:text-amber-700' : 'text-gray-200 hover:text-white'}`}
+              href="/shop" 
+              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isDarkText ? 'text-gray-600 hover:text-emerald-700' : 'text-gray-200 hover:text-white'}`}
             >
-              Our Menu
-              <span className={`absolute -bottom-2 left-0 w-full h-[1px] bg-amber-500 scale-x-0 transition-transform group-hover:scale-x-100 ${isActive('/menu') ? 'scale-x-100' : ''}`}></span>
+              Shop
+              <span className={`absolute -bottom-2 left-0 w-full h-[1px] bg-emerald-500 scale-x-0 transition-transform group-hover:scale-x-100 ${isActive('/shop') ? 'scale-x-100' : ''}`}></span>
             </Link>
             <Link 
-              href="/custom-orders" 
-              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isDarkText ? 'text-gray-600 hover:text-amber-700' : 'text-gray-200 hover:text-white'}`}
+              href="/about" 
+              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isDarkText ? 'text-gray-600 hover:text-emerald-700' : 'text-gray-200 hover:text-white'}`}
             >
-              Custom Orders
-              <span className={`absolute -bottom-2 left-0 w-full h-[1px] bg-amber-500 scale-x-0 transition-transform group-hover:scale-x-100 ${isActive('/custom-orders') ? 'scale-x-100' : ''}`}></span>
+              About Us
+              <span className={`absolute -bottom-2 left-0 w-full h-[1px] bg-emerald-500 scale-x-0 transition-transform group-hover:scale-x-100 ${isActive('/about') ? 'scale-x-100' : ''}`}></span>
             </Link>
             <Link 
               href="/contact" 
-              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isDarkText ? 'text-gray-600 hover:text-amber-700' : 'text-gray-200 hover:text-white'}`}
+              className={`text-sm uppercase tracking-[0.2em] transition-colors relative group ${isDarkText ? 'text-gray-600 hover:text-emerald-700' : 'text-gray-200 hover:text-white'}`}
             >
               Contact
-              <span className={`absolute -bottom-2 left-0 w-full h-[1px] bg-amber-500 scale-x-0 transition-transform group-hover:scale-x-100 ${isActive('/contact') ? 'scale-x-100' : ''}`}></span>
+              <span className={`absolute -bottom-2 left-0 w-full h-[1px] bg-emerald-500 scale-x-0 transition-transform group-hover:scale-x-100 ${isActive('/contact') ? 'scale-x-100' : ''}`}></span>
             </Link>
           </div>
 
           {/* Icons (Search + Cart) */}
           <div className="flex items-center gap-4 md:gap-6">
             <Link 
-              href="/menu"
-              className={`transition-colors ${isDarkText ? 'text-gray-900 hover:text-amber-700' : 'text-white hover:text-amber-200'}`}
-              aria-label="Search Menu"
+              href="/shop"
+              className={`transition-colors ${isDarkText ? 'text-gray-900 hover:text-emerald-700' : 'text-white hover:text-emerald-200'}`}
+              aria-label="Search Shop"
             >
               <Search className="w-5 h-5" />
             </Link>
             <button 
               onClick={() => setIsOpen(true)}
-              className={`relative flex items-center transition-colors group ${isDarkText ? 'text-gray-900 hover:text-amber-700' : 'text-white hover:text-amber-200'}`}
+              className={`relative flex items-center transition-colors group ${isDarkText ? 'text-gray-900 hover:text-emerald-700' : 'text-white hover:text-emerald-200'}`}
             >
               <ShoppingBag className="w-5 h-5 transition-transform group-hover:scale-110" />
               {getTotalItems() > 0 && (
-                <span className="absolute -top-2 -right-2 bg-amber-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-sm">
+                <span className="absolute -top-2 -right-2 bg-emerald-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-sm">
                   {getTotalItems()}
                 </span>
               )}
@@ -109,28 +109,28 @@ export default function Navbar() {
           <Link 
             href="/" 
             onClick={() => setIsMobileMenuOpen(false)}
-            className={`text-sm uppercase tracking-widest py-3 border-b border-gray-100 ${isActive('/') ? 'text-amber-600 font-semibold' : 'text-gray-600'}`}
+            className={`text-sm uppercase tracking-widest py-3 border-b border-gray-100 ${isActive('/') ? 'text-emerald-600 font-semibold' : 'text-gray-600'}`}
           >
             Home
           </Link>
           <Link 
-            href="/menu" 
+            href="/shop" 
             onClick={() => setIsMobileMenuOpen(false)}
-            className={`text-sm uppercase tracking-widest py-3 border-b border-gray-100 ${isActive('/menu') ? 'text-amber-600 font-semibold' : 'text-gray-600'}`}
+            className={`text-sm uppercase tracking-widest py-3 border-b border-gray-100 ${isActive('/shop') ? 'text-emerald-600 font-semibold' : 'text-gray-600'}`}
           >
-            Our Menu
+            Shop
           </Link>
           <Link 
-            href="/custom-orders" 
+            href="/about" 
             onClick={() => setIsMobileMenuOpen(false)}
-            className={`text-sm uppercase tracking-widest py-3 border-b border-gray-100 ${isActive('/custom-orders') ? 'text-amber-600 font-semibold' : 'text-gray-600'}`}
+            className={`text-sm uppercase tracking-widest py-3 border-b border-gray-100 ${isActive('/about') ? 'text-emerald-600 font-semibold' : 'text-gray-600'}`}
           >
-            Custom Orders
+            About Us
           </Link>
           <Link 
             href="/contact" 
             onClick={() => setIsMobileMenuOpen(false)}
-            className={`text-sm uppercase tracking-widest py-3 border-b border-gray-100 ${isActive('/contact') ? 'text-amber-600 font-semibold' : 'text-gray-600'}`}
+            className={`text-sm uppercase tracking-widest py-3 border-b border-gray-100 ${isActive('/contact') ? 'text-emerald-600 font-semibold' : 'text-gray-600'}`}
           >
             Contact
           </Link>

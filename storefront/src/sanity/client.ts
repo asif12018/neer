@@ -20,26 +20,26 @@ export function urlFor(source: any) {
 }
 
 // Interfaces
-export interface Cake {
+export interface Product {
   _id: string;
   name: string;
   slug: { current: string };
   image: any;
   description: string;
   price: number;
-  weightOptions: string[];
+  sizeOptions: string[];
   category: string;
 }
 
 // Queries
-export async function getFeaturedCakes(): Promise<Cake[]> {
-  return client.fetch(`*[_type == "cake"][0...4] | order(_createdAt desc)`);
+export async function getFeaturedProducts(): Promise<Product[]> {
+  return client.fetch(`*[_type == "product"][0...4] | order(_createdAt desc)`);
 }
 
-export async function getAllCakes(): Promise<Cake[]> {
-  return client.fetch(`*[_type == "cake"] | order(_createdAt desc)`);
+export async function getAllProducts(): Promise<Product[]> {
+  return client.fetch(`*[_type == "product"] | order(_createdAt desc)`);
 }
 
-export async function getCakeById(id: string): Promise<Cake | null> {
-  return client.fetch(`*[_type == "cake" && _id == $id][0]`, { id });
+export async function getProductById(id: string): Promise<Product | null> {
+  return client.fetch(`*[_type == "product" && _id == $id][0]`, { id });
 }
