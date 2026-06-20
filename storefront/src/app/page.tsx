@@ -20,7 +20,7 @@ export default async function Home() {
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="/neer-hero.jpg" 
+              src="/neer-hero.png" 
               alt="Neer Natural Care Products" 
               fill 
               className="object-cover"
