@@ -185,37 +185,6 @@ export default async function Home() {
           </form>
         </section>
       </main>
-      
-      {/* Footer */}
-      <footer className="bg-emerald-950 text-emerald-100/70 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-12 text-center md:text-left">
-          <div>
-            <h4 className="text-white font-serif text-2xl tracking-wider mb-4">Neer</h4>
-            <p className="font-light text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
-              Pure nature, pure you. Crafted with traditional ingredients for strong, healthy, beautiful hair.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-white font-serif text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-3 text-sm font-light">
-              <li><Link href="/shop" className="hover:text-white transition-colors">Shop</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-serif text-lg mb-4">Contact</h4>
-            <ul className="space-y-3 text-sm font-light">
-              <li>123 Nature Avenue, Dhaka</li>
-              <li>+880 1XXX XXXXXX</li>
-              <li>hello@neer.com</li>
-            </ul>
-          </div>
-        </div>
-        <div className="border-t border-emerald-900/50 mt-12 pt-8 text-center text-xs font-light tracking-wider">
-          <p>© 2026 Neer Natural Care. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   );
 }
