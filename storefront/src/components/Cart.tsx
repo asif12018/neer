@@ -11,13 +11,14 @@ export default function Cart() {
     // You can replace this with your actual WhatsApp number
     const phoneNumber = '8801963833098'; 
     
-    let message = 'Hello Neer Natural Care! I would like to place an order:\\n\\n';
+    const date = new Date().toLocaleDateString();
+    let message = `Hello Neer Natural Care! I would like to place an order on ${date}:\n\n`;
     
     items.forEach(item => {
-      message += `${item.quantity}x ${item.name} (${item.size}) - ৳${item.price * item.quantity}\\n`;
+      message += `${item.quantity}x ${item.name} (${item.size}) - ৳${item.price * item.quantity}\n`;
     });
     
-    message += `\\nTotal: ৳${getTotalPrice()}\\n\\n`;
+    message += `\nTotal: ৳${getTotalPrice()}\n\n`;
     message += 'Please let me know the next steps!';
     
     const encodedMessage = encodeURIComponent(message);
