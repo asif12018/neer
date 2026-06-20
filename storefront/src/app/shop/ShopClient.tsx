@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Cart from '@/components/Cart';
 import { Plus } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 export default function ShopClient({ initialProducts }: { initialProducts: Product[] }) {
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -27,6 +28,7 @@ export default function ShopClient({ initialProducts }: { initialProducts: Produ
       size: product.sizeOptions?.[0] || '100ml',
       image: product.image ? urlFor(product.image).url() : '/placeholder.jpg',
     });
+    toast.success(`${product.name} added to cart!`);
   };
 
   return (

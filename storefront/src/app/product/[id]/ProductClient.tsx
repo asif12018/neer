@@ -6,6 +6,7 @@ import { Minus, Plus, ShoppingBag, ArrowLeft, Leaf, ShieldCheck } from 'lucide-r
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 export default function ProductClient({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
@@ -21,6 +22,7 @@ export default function ProductClient({ product }: { product: Product }) {
       image: product.image ? urlFor(product.image).url() : '/placeholder.jpg',
       quantity
     });
+    toast.success(`${quantity}x ${product.name} added to cart!`);
   };
 
   return (
