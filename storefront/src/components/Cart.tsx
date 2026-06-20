@@ -7,6 +7,23 @@ import Image from 'next/image';
 export default function Cart() {
   const { items, isOpen, setIsOpen, removeItem, updateQuantity, getTotalPrice } = useCartStore();
 
+  const handleCheckout = () => {
+    // You can replace this with your actual WhatsApp number
+    const phoneNumber = '8801700000000'; 
+    
+    let message = 'Hello Neer Natural Care! I would like to place an order:\\n\\n';
+    
+    items.forEach(item => {
+      message += `${item.quantity}x ${item.name} (${item.size}) - ৳${item.price * item.quantity}\\n`;
+    });
+    
+    message += `\\nTotal: ৳${getTotalPrice()}\\n\\n`;
+    message += 'Please let me know the next steps!';
+    
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -99,7 +116,10 @@ export default function Cart() {
               <span>Subtotal</span>
               <span>৳{getTotalPrice()}</span>
             </div>
-            <button className="w-full py-4 bg-emerald-800 text-white text-sm font-semibold tracking-widest uppercase hover:bg-emerald-900 transition-colors shadow-sm">
+            <button 
+              onClick={handleCheckout}
+              className="w-full py-4 bg-emerald-800 text-white text-sm font-semibold tracking-widest uppercase hover:bg-emerald-900 transition-colors shadow-sm"
+            >
               Proceed to Checkout
             </button>
             <p className="text-center text-xs text-gray-500 mt-4 font-light">
